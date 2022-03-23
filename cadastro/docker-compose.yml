@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  postgres-quarkus:
+    container_name: cadastro-ifood
+    image: postgres:12.2
+    environment:
+      POSTGRES_USER: soza
+      POSTGRES_PASSWORD: osf77
+      POSTGRES_DB: ifood
+    ports:
+      - "5432:5432"
