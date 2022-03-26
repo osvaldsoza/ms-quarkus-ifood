@@ -37,8 +37,8 @@ public class LocalizacaoResource {
         }
 
         Localizacao localizacao = localizacaoOP.get();
-        localizacao.latitude = localizacaoDTO.latitude;
-        localizacao.longitude = localizacaoDTO.longitude;
+        localizacao.setLatitude(localizacaoDTO.getLatitude());
+        localizacao.setLongitude(localizacaoDTO.getLongitude());
 
         localizacao.persist();
     }
