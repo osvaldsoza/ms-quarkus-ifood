@@ -1,0 +1,1 @@
+[{"id":123,"nome":"Novo restaurante","proprietario":"ID do keyclock"},{"id":456,"nome":"Novo restaurante 2","proprietario":"ID do keyclock 2"}]
