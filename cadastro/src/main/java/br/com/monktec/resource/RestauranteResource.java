@@ -1,5 +1,6 @@
 package br.com.monktec.resource;
 
+import br.com.monktec.PratoResponse;
 import br.com.monktec.dto.AdicionaPratoDTO;
 import br.com.monktec.dto.AdicionaRestauranteDTO;
 import br.com.monktec.dto.AtualizaNomeRestauranteDTO;
@@ -15,6 +16,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -81,6 +83,24 @@ public class RestauranteResource {
         Optional<Restaurante> restauranteOptional = buscarRestaurante(idRestaurante);
 
         return Prato.list("restaurante", restauranteOptional.get());
+    }
+
+    @GET
+    @Path("pratos/{idRestaurante}")
+    @Tag(name = "pratos")
+    public List<PratoResponse> pratos(@PathParam("idRestaurante") Long idRestaurante) {
+        var pratos = Prato.findByRestauranteId(idRestaurante);
+
+        var pratosResponses = new ArrayList<PratoResponse>();
+
+        for (Prato prato : pratos) {
+            var p = new PratoResponse();
+            p.setPrato(prato.getNome());
+            p.setPreco(prato.getPreco());
+            p.setRestaurante(prato.getRestaurante().getNome());
+            pratosResponses.add(p);
+        }
+        return pratosResponses;
     }
 
     @POST

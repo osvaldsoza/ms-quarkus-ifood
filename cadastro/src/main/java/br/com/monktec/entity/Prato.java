@@ -4,6 +4,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "prato")
@@ -60,5 +61,9 @@ public class Prato extends PanacheEntityBase {
 
     public void setPreco(BigDecimal preco) {
         this.preco = preco;
+    }
+
+    public static List<Prato> findByRestauranteId(Long restauranteId){
+        return find("restaurante_id", restauranteId).list();
     }
 }
