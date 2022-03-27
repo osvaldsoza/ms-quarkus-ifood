@@ -8,8 +8,6 @@ public class AdicionaRestauranteDTO {
 
     private String cnpj;
 
-    private LocalizacaoDTO localizacao;
-
     public String getNome() {
         return nome;
     }
@@ -32,13 +30,5 @@ public class AdicionaRestauranteDTO {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
-    }
-
-    public LocalizacaoDTO getLocalizacao() {
-        return localizacao;
-    }
-
-    public void setLocalizacao(LocalizacaoDTO localizacao) {
-        this.localizacao = localizacao;
     }
 }
