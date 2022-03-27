@@ -8,5 +8,10 @@
     "id": 456,
     "nome": "Novo restaurante 2",
     "proprietario": "ID do keyclock 2"
+  },
+  {
+    "id": 789,
+    "nome": "Novo restaurante 3",
+    "proprietario": "ID do keyclock 3"
   }
 ]

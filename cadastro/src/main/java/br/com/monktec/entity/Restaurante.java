@@ -1,6 +1,7 @@
 package br.com.monktec.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -27,7 +28,7 @@ public class Restaurante extends PanacheEntityBase {
     @UpdateTimestamp
     private Date dataAtualizacao;
 
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Localizacao localizacao;
 
     public Long getId() {
