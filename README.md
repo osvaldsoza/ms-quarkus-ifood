@@ -1,4 +1,4 @@
-# MicroServiço com Quarkus (app ifood)
+# MicroServiço com Quarkus
 
 ## Tecnologias:
 #### Test Continers
